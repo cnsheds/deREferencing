@@ -77,7 +77,7 @@ class DbgHooks(idaapi.DBG_Hooks):
     def dbg_suspend_process(self):
         if self.from_attach:
             self.from_attach = False
-            self.notify()
+        self.notify()
 
     def dbg_exception(self, pid, tid, ea, exc_code, exc_can_cont, exc_ea, exc_info):
         self.callback()
